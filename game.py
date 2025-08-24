@@ -22,12 +22,7 @@ class Game:
             self.quit_game()
 
     def setup_players(self):
-        for number, player in enumerate(self.players, 1):
-            print(f"Player {number}")
-            print("-" * 20)
-            player.choose_name()
-            player.choose_symbol()
-            system("cls")
+        self.menu.players_menu(self.players)
 
     def play(self):
         pass
@@ -45,7 +40,7 @@ class Game:
         pass
 
     def quit_game(self):
-        pass
+        self.menu.quit_menu()
 
 
 game = Game()

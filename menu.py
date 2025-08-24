@@ -1,4 +1,5 @@
 from time import sleep
+from os import system
 
 from player import Player
 
@@ -19,29 +20,12 @@ class Menu:
         sleep(3)
         exit()
 
-    def players_menu(self):
-        print("Player1: ")
-        player1 = Player()
-        player1.choose_name()
-        player1.choose_symbol()
-
-        print("\nPlayer2: ")
-        player2 = Player()
-        while True:
-            player2.choose_name()
-            if player2.name != player1.name:
-                break
-            else:
-                print("Player 2 can't have Player 1's name")
-
-        while True:
-            player2.choose_symbol()
-            if player2.symbol != player1.symbol:
-                break
-            else:
-                print("Player 2 can't have Player 1's symbol")
-
-        return (player1, player2)
+    def players_menu(self, players: list[Player]):
+        for number, player in enumerate(players, 1):
+            print(f"Player {number}")
+            print("-" * 20)
+            player.choose_symbol()
+            system("cls")
 
     def result_menu(self, player: str = None, draw: bool = False):
         if draw:
