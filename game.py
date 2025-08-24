@@ -112,6 +112,3 @@ class Game:
     def quit_game(self):
         self.menu.quit_menu()
 
-
-game = Game()
-game.start_game()
