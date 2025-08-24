@@ -27,18 +27,9 @@ class Menu:
             player.choose_symbol()
             system("cls")
 
-    def result_menu(self, player: str = None, draw: bool = False):
-        if draw:
-            print("Draw")
-        else:
-            print(f"{player} Wins")
-
+    def result_menu(self):
         while True:
-            choice = input("\n\nEnter:\n\t1. To Play Again\n\t2. To Quit\n\t\t: ")
-            if choice == "1" or choice == "2":
-                if choice == "1":
-                    self.main_menu()
-                elif choice == "2":
-                    self.quit_menu()
-                break
-            print("Invalid Choice. ")
+            choice = int(input("\n\nEnter:\n\t1. Play Again\n\t2. Quit\n\t\t: "))
+            if choice == 1 or choice == 2:
+                return choice
+            print("\n\tInvalid Choice.")

@@ -5,9 +5,7 @@ class Player:
         self.symbol = ""
 
     def validate_symbol(self, symbol:str):
-        if symbol.isalpha() and len(symbol) == 1:
-            return True
-        return False
+        return symbol.isalpha() and len(symbol) == 1
 
     def choose_symbol(self):
         while True:

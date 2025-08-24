@@ -16,4 +16,4 @@ class Board:
         return self.board[place - 1].isdigit()
 
     def clear_board(self):
-        self.board = [i for i in range(1, 10)]
+        self.board = [str(i) for i in range(1, 10)]
